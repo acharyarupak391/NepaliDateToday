@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Nepali Date Today!",
+  "version": "1.1.0",
+
+  "description": "Today's Nepali date with all other details!",
+
+  "icons": {
+    "48": "icons/nepali-date-icon-48.png",
+    "96": "icons/nepali-date-icon-96.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "background": {
+    "service_worker": "dist/background.bundle.js"
+  },
+  "permissions": ["tabs", "cookies"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_icon": "icons/nepali-date-icon.png",
+    "default_title": "Nepali Date",
+    "default_popup": "popup/popup.html"
+  }
+}
